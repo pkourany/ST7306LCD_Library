@@ -85,7 +85,7 @@ ST7036::ST7036(uint8_t num_lines, uint8_t num_col,
 {
    _num_lines    = num_lines;
 	_num_col      = num_col;
-   _i2cAddress   = ( i2cAddr >> 1 );
+   _i2cAddress   = i2cAddr;	// removed I2C address shift (>> 1)
    _cmdDelay     = CMD_DELAY;
    _charDelay    = CHAR_DELAY;
    _initialised  = false;
@@ -98,7 +98,7 @@ ST7036::ST7036(uint8_t num_lines, uint8_t num_col,
 {
    _num_lines    = num_lines;
 	_num_col      = num_col;
-   _i2cAddress   = ( i2cAddr >> 1 );
+   _i2cAddress   = i2cAddr;	// removed I2C address shift (>> 1)
    _cmdDelay     = CMD_DELAY;
    _charDelay    = CHAR_DELAY;
    _initialised  = false;
