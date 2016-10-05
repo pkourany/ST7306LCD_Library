@@ -185,7 +185,9 @@ size_t ST7036::write(uint8_t value)
          _status = Wire.endTransmission ();
          delay(_charDelay);
       }
+      return 1;
    }
+   return 0;
 }
 
 size_t ST7036::write(const uint8_t *buffer, size_t size)
@@ -199,7 +201,9 @@ size_t ST7036::write(const uint8_t *buffer, size_t size)
       Wire.write ( (uint8_t *)buffer, size );
       _status = Wire.endTransmission ();
       delay(_charDelay);
+      return size;
    }
+   return 0;
 }
 
 
@@ -265,8 +269,8 @@ void ST7036::setCursor(uint8_t line_num, uint8_t x)
 }
 
 #ifdef _LCDEXPANDED
-uint8_t ST7036::status(){
-	
+uint8_t ST7036::status()
+{	
 	return _status;
 }
 
