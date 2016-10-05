@@ -128,7 +128,7 @@ void ST7036::init ()
    Wire.write ( FUNC_SET_TBL1 );
    delay (10);
    Wire.write ( 0x14 );  // Set BIAS - 1/5
-   Wire.write ( 0x73 );  // Set contrast low byte
+   Wire.write ( 0x78 );  // Set contrast low byte
    Wire.write ( 0x5E );  // ICON disp on, Booster on, Contrast high byte 
    Wire.write ( 0x6D );  // Follower circuit (internal), amp ratio (6)
    Wire.write ( 0x0C );  // Display on
