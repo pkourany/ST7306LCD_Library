@@ -33,17 +33,13 @@
 #include "application.h"
 
 #define _LCDEXPANDED				// If defined turn on advanced functions
-//#include <Arduino.h>	
-//#include <inttypes.h>
-//#include <Wire.h>
-//#include "Print.h"
 #include "LCD.h"
 
 
 #define _ST7036_VERSION       "1.2.0"
 #define _LCD_API_VERSION      "1.0"
 
-class ST7036 : public Print 
+class ST7036 : public LCD
 {
 	
 public: 
