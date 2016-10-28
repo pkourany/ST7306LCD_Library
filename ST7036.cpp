@@ -84,7 +84,7 @@ ST7036::ST7036(uint8_t num_lines, uint8_t num_col,
                uint8_t i2cAddr )
 {
    _num_lines    = num_lines;
-	_num_col      = num_col;
+   _num_col      = num_col;
    _i2cAddress   = i2cAddr;	// removed I2C address shift (>> 1)
    _cmdDelay     = CMD_DELAY;
    _charDelay    = CHAR_DELAY;
@@ -97,7 +97,7 @@ ST7036::ST7036(uint8_t num_lines, uint8_t num_col,
                uint8_t i2cAddr, int8_t backlightPin )
 {
    _num_lines    = num_lines;
-	_num_col      = num_col;
+   _num_col      = num_col;
    _i2cAddress   = i2cAddr;	// removed I2C address shift (>> 1)
    _cmdDelay     = CMD_DELAY;
    _charDelay    = CHAR_DELAY;
@@ -122,7 +122,7 @@ void ST7036::init ()
    Wire.begin();
    
    Wire.beginTransmission ( _i2cAddress );
-   Wire.write ( (byte)0x0 );   // Send command to the display
+   Wire.write ( 0x00 );   // Send command to the display
    Wire.write ( FUNC_SET_TBL0 );
    delay (10);
    Wire.write ( FUNC_SET_TBL1 );
@@ -325,7 +325,7 @@ void ST7036::setBacklight(uint8_t new_val)
    // Set analog write to the pin, the routine already checks if it can
    // set a PWM or not.
    // -----------------------------------------------------------------
-	if ( _backlightPin != -1 )
+   if ( _backlightPin != -1 )
    {
       analogWrite ( _backlightPin, new_val );
    }
