@@ -90,7 +90,7 @@ ST7036::ST7036(uint8_t num_lines, uint8_t num_col,
    _charDelay    = CHAR_DELAY;
    _initialised  = false;
    _backlightPin = -1;
-   
+   _status       = 0;
 }
 
 ST7036::ST7036(uint8_t num_lines, uint8_t num_col, 
@@ -103,14 +103,14 @@ ST7036::ST7036(uint8_t num_lines, uint8_t num_col,
    _charDelay    = CHAR_DELAY;
    _initialised  = false;
    _backlightPin = backlightPin;
-   
+   _status       = 0;
+
    // If there is a pin assigned to the BL, set it as an output
    // ---------------------------------------------------------
    if ( _backlightPin != 0 )
    {
       pinMode ( _backlightPin, OUTPUT );
    }
-   
 }
 
 // Functions: modifiers (set), selectors (get) and class methods
