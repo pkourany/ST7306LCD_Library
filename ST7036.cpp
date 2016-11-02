@@ -117,7 +117,6 @@ ST7036::ST7036(uint8_t num_lines, uint8_t num_col,
 // ---------------------------------------------------------------------------
 void ST7036::init () 
 {
-   size_t retVal; 
    // Initialise the Wire library.
    Wire.begin();
    
